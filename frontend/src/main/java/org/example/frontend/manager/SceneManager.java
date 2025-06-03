@@ -23,9 +23,6 @@ public class SceneManager {
     switchScene("/view/login_1.fxml", "Вход в приложение", 440, 560);
 
     currentStage.setResizable(false);
-    ImageView view = new ImageView();
-    Image image = new Image(Objects.requireNonNull(SceneManager.class.getResourceAsStream("/images/logo.png")));
-    view.setImage(image);
   }
 
   public static void switchToRegisterScene() throws IOException {
