@@ -2,10 +2,14 @@ package org.example.frontend.utils;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+import org.example.frontend.dh.Pair;
+import org.example.frontend.dh.Protocol;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
 
+@Slf4j
 public class DiffieHellman {
   private static final String gStr = "2";
   private static final String pStr = """

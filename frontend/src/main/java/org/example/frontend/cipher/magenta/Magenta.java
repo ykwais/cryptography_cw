@@ -176,14 +176,4 @@ public class Magenta implements EncryptorDecryptorSymmetric {
         }
         return result;
     }
-
-
-
-
-
-
-
-
-
-
 }

@@ -7,6 +7,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import lombok.extern.slf4j.Slf4j;
+import org.example.frontend.dh.Pair;
+import org.example.frontend.dh.Protocol;
 import org.example.frontend.manager.SceneManager;
 import org.example.frontend.model.JwtStorage;
 import org.example.frontend.model.LoginRequest;
@@ -16,6 +18,7 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -131,6 +134,33 @@ public class LoginController {
       loginButton.setDisable(false);
       showError("Json error " + e.getMessage());
     }
+
+
+//    try{
+//      Pair<BigInteger, BigInteger> params = Protocol.generatePairParallel();
+//      BigInteger p = params.getLeft();
+//      BigInteger g = params.getRight();
+//
+//      log.info("p = " + p);
+//      log.info("g = " + g);
+//
+//
+//      BigInteger a = Protocol.generateSecret();
+//      BigInteger b = Protocol.generateSecret();
+//
+//
+//      BigInteger A = Protocol.generateDhKeys(g, a, p);
+//      BigInteger B = Protocol.generateDhKeys(g, b, p);
+//
+//
+//      BigInteger sharedA = Protocol.calculateSharedSecret(a, B, p);
+//      BigInteger sharedB = Protocol.calculateSharedSecret(b, A, p);
+//
+//      log.info("Shared secret at A: " + sharedA);
+//      log.info("Shared secret at B: " + sharedB);
+//    } catch(Exception e){
+//      log.info("WRONG!!!");
+//    }
   }
 
   @FXML
